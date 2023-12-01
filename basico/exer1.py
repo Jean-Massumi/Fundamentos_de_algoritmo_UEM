@@ -29,4 +29,3 @@ def calcular_hipotenusa(co:float,ca:float) -> float:
 
 
 main()
-
