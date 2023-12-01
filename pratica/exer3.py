@@ -28,3 +28,7 @@ def area_retangulo(lar:float, alt:float) -> float:
     return lar * alt
 
 # main()
+
+
+
+# teste 2
