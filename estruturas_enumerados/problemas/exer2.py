@@ -57,7 +57,7 @@ def valor_final(valor_inicial:float, anos:int ) -> float:
     return int(valor_inicial)
 
 
-print(valor_final(1900, 10))
+print(valor_final(1987, 100))
 
 
 
