@@ -20,7 +20,7 @@ class Jogador:
     NIVEL_ATUAL : int
     TEMPO_JOGO : float
 
-def jogador(nivelA:int, tempoJ:float) -> Jogador:
+def nivel_atual_jogador(Player:Jogador) -> int:
     '''
         Calcular o *nivel atual* do jogador atraves da quantidade horas jogadas em uma semana.
 
@@ -33,23 +33,31 @@ def jogador(nivelA:int, tempoJ:float) -> Jogador:
         O nivel do jogador nao pode < 0.
 
     Exemplos
-    >>> jogador(0,6)
-    6
-    >>> jogador(4,8)
-    11
-    >>> jogador(5,3)
+    >>> nivel_atual_jogador(Jogador(0,6))
+    1
+    >>> nivel_atual_jogador(Jogador(4,8))
+    7
+    >>> nivel_atual_jogador(Jogador(5,3))
+    4
+    >>> nivel_atual_jogador(Jogador(2,4))
     2
-    >>> jogador(2,4)
-    2
-    >>> jogador(0,2)
+    >>> nivel_atual_jogador(Jogador(0,2))
     0
-    >>> jogador()
-
+    >>> nivel_atual_jogador(Jogador(24,7))
+    25
     '''
 
-
+    if Player.TEMPO_JOGO < 4:
+        Player.NIVEL_ATUAL = Player.NIVEL_ATUAL - (4 - Player.TEMPO_JOGO)
+    elif Player.TEMPO_JOGO > 5:
+        Player.NIVEL_ATUAL += (Player.TEMPO_JOGO - 5)
+        
+    if Player.NIVEL_ATUAL > 25:
+        Player.NIVEL_ATUAL = 25
+    elif Player.NIVEL_ATUAL < 0:
+        Player.NIVEL_ATUAL = 0
     
-
+    return Player.NIVEL_ATUAL
 
 
 
