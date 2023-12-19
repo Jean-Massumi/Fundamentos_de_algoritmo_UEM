@@ -41,7 +41,7 @@ def imposto(renda:float) ->float:
 
 
 
-
+#qw
 
 
 
