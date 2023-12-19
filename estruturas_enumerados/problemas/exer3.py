@@ -26,7 +26,25 @@ def jogador(nivelA:int, tempoJ:float) -> Jogador:
 
         Se o 4hs <= *tempoJ* <= 5hs  . O jogador permanece no mesmo nivel.
         Se o *tempoJ* < 4hs . O jogador perde 1 nivel a cada 1h que faltou para alcancar as 4hs
-        
+        Se o *tmpoJ* > 5hs .  O jogador aumentam 1 nivel para cada hora jogada alem das 5hs.
+
+        O limite de niveis  recebidos por semana devem ser ate 7 niveis.
+
+        O nivel do jogador nao pode < 0.
+
+    Exemplos
+    >>> jogador(0,6)
+    6
+    >>> jogador(4,8)
+    11
+    >>> jogador(5,3)
+    2
+    >>> jogador(2,4)
+    2
+    >>> jogador(0,2)
+    0
+    >>> jogador()
+
     '''
 
 
