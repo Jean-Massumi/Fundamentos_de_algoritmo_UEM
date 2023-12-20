@@ -22,16 +22,22 @@ def exibir_letreiro(exibir:Letreiro) -> str:
         *momento* em um letreiro que pode exibir um determinado numero de caracteres.
     
     Exemplos:
-    >>> exibir_letreiro(Letreiro('Promoção de sorvete, pague 2 leve 3' , ' ', 20 , 25))
-    
+    >>> exibir_letreiro(Letreiro('Promoção de sorvete, pague 2 leve 3!' , ' ', 20 , 25))
+    'e 2 leve 3! Promoção'
     '''
 
     for i in range(exibir.MOMENTO):
-            ...
+        exibir.EXIBIR_TEXTO = exibir.TEXTO[i:exibir.NUMEROS_CARACTERES] + exibir.TEXTO[:i] 
+        if i == i:
+            # print(f'MOMENTO {i}')
+            print(f'{exibir.EXIBIR_TEXTO}')
+
+        
+
+    return exibir.EXIBIR_TEXTO
 
 
-
-
+exibir_letreiro(Letreiro('Promoção de sorvete, pague 2 leve 3!' , ' ', 20 , 25))
 
 
 
