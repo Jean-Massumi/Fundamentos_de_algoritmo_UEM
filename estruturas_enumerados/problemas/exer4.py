@@ -23,18 +23,21 @@ def exibir_letreiro(exibir:Letreiro) -> str:
     
     Exemplos:
     >>> exibir_letreiro(Letreiro('Promoção de sorvete, pague 2 leve 3!' , ' ', 20 , 25))
-    'e 2 leve 3! Promoção'
+    'ue 2 leve 3! Promoçã'
+    >>> exibir_letreiro(Letreiro('0123456',' ' ,3 ,2))
+    '123'
+    >>> exibir_letreiro(Letreiro('4567', ' ', 4, 3))
+    '67 4'
     '''
 
     for i in range(exibir.MOMENTO):
-        exibir.EXIBIR_TEXTO = exibir.TEXTO[i:exibir.NUMEROS_CARACTERES] + exibir.TEXTO[:i] 
-        if i == i:
-            # print(f'MOMENTO {i}')
-            print(f'{exibir.EXIBIR_TEXTO}')
-
+        exibir.EXIBIR_TEXTO = exibir.TEXTO[i:] + ' ' + exibir.TEXTO[:i] 
         
+        # print(f'MOMENTO {i}')
+        # print(f'{exibir.EXIBIR_TEXTO[:exibir.NUMEROS_CARACTERES]}')
 
-    return exibir.EXIBIR_TEXTO
+
+    return exibir.EXIBIR_TEXTO[:exibir.NUMEROS_CARACTERES]
 
 
 exibir_letreiro(Letreiro('Promoção de sorvete, pague 2 leve 3!' , ' ', 20 , 25))
