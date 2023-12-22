@@ -28,6 +28,8 @@ def exibir_letreiro(exibir:Letreiro) -> str:
     '123'
     >>> exibir_letreiro(Letreiro('4567', ' ', 4, 3))
     '67 4'
+    >>> exibir_letreiro(Letreiro('Bora curtir as férias?', ' ',10, 13))
+    'as férias?'
     '''
 
     for i in range(exibir.MOMENTO):
@@ -39,7 +41,7 @@ def exibir_letreiro(exibir:Letreiro) -> str:
 
     return exibir.EXIBIR_TEXTO[:exibir.NUMEROS_CARACTERES]
 
-
+#  Usando o Debug no exemplo abaixo!
 exibir_letreiro(Letreiro('Promoção de sorvete, pague 2 leve 3!' , ' ', 20 , 25))
 
 
