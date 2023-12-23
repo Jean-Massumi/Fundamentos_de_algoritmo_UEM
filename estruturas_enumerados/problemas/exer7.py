@@ -64,15 +64,3 @@ def situação_média(avaliações:Aluno) -> str:
 
     return situacao
 
-
-
-
-
-
-
-
-
-
-
-
-
