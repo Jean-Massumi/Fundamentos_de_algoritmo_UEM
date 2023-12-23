@@ -22,6 +22,8 @@ def sequencia(b:Baralho) -> str:
         Determinar se as tres primeiras cartas de um batalho bem embaralhado está em ordem crescente,
         decrescente ou nao nao ordenada.
 
+        As cartas estão enumeradas de 1 a 13 e elas não se repetem.
+
     Exemplos:
     >>> sequencia(Baralho([2,7,12])).name
     'CRESCENTE'
@@ -32,9 +34,9 @@ def sequencia(b:Baralho) -> str:
 
     '''
 
-    if b.TRES_PRIMEIRAS_TOPO[0] < b.TRES_PRIMEIRAS_TOPO[1] and b.TRES_PRIMEIRAS_TOPO[1] < b.TRES_PRIMEIRAS_TOPO[2]:
+    if b.TRES_PRIMEIRAS_TOPO[0] < b.TRES_PRIMEIRAS_TOPO[1] < b.TRES_PRIMEIRAS_TOPO[2]:
         ordem = Ordenada.CRESCENTE
-    elif b.TRES_PRIMEIRAS_TOPO[0] > b.TRES_PRIMEIRAS_TOPO[1] and b.TRES_PRIMEIRAS_TOPO[1] > b.TRES_PRIMEIRAS_TOPO[2]:
+    elif b.TRES_PRIMEIRAS_TOPO[0] > b.TRES_PRIMEIRAS_TOPO[1] > b.TRES_PRIMEIRAS_TOPO[2]:
         ordem = Ordenada.DECRESCENTE
     else:
         ordem = Ordenada.NÃO_ORDENADA
