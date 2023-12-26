@@ -57,10 +57,9 @@ class Time_Partida:
     '''
         Situação da ultima partida jogada de um time.
     '''
-    SITUACAO : str()
-    GOLS_MARCADOS : int()
-    GOLS_SOFRIDOS : int()
-
+    SITUACAO : str
+    GOLS_MARCADOS : int
+    GOLS_SOFRIDOS : int
 
 def atualiza_desempenho(T1:Time,T1P:Time_Partida, T2:Time , T2P:Time_Partida) -> str:
     '''
