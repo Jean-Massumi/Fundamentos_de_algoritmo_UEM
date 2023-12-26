@@ -26,22 +26,33 @@ def melhor_desempenho(T1:Time , T2:Time) -> str:
         Caso haja empate a ordem alfatica dos nomes é usada para desempate.
     
     Exemplos:
-    >>> melhor_desempenho(Time('Vasco', 39, 11, 19), Time('Santos', 39, 11, 19)) # Caso de empate
-    'Santos teve o melhor desempenho!'      # O desempate é feito por ordem alfabetica e como *S* vem antes do
-                                            # *T* o Santos teve o melhor desempenho.
+    >>> melhor_desempenho(Time('Vasco', 39, 11, 19), Time('Santos', 39, 11, 19)) 
+    'Santos teve o melhor desempenho!'
+    >>> melhor_desempenho(Time('Atletico-MG', 54, 17, 33), Time('Atletico-GO', 54, 17, 33)) 
+    'Atletico-GO teve o melhor desempenho!'
     >>> melhor_desempenho(Time('Palmeiras', 43, 14, 22), Time('Curitiba', 27, 9, 17))
     'Palmeiras teve o melhor desempenho!'
     >>> melhor_desempenho(Time('Flamengo', 11, 3, 6), Time('São Paulo', 15, 5, 5))
     'São Paulo teve o melhor desempenho!'
     '''
 
+    if T1.PONTOS > T2.PONTOS:
+        resultado = f'{T1.NOME} teve o melhor desempenho!'
+    elif T1.PONTOS < T2.PONTOS:
+        resultado = f'{T2.NOME} teve o melhor desempenho!'
+    elif (T1.PONTOS == T2.PONTOS) and (T1.VITÓRIAS == T2.VITÓRIAS) and (T1.SALDOS_GOLS == T2.SALDOS_GOLS):
+        for i in range(len(T1.NOME)):
+            if T1.NOME[i] != T2.NOME[i]:
+                if T1.NOME[i] < T2.NOME[i]:
+                    resultado = f'{T1.NOME} teve o melhor desempenho!'
+                else:
+                    resultado = f'{T2.NOME} teve o melhor desempenho!'
+                break
+
+    return resultado
 
 
-
-
-
-
-
+print(melhor_desempenho(Time('Atletico-MG', 54, 17, 33), Time('Atletico-GO', 54, 17, 33)))
 
 
 
