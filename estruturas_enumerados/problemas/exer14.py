@@ -6,6 +6,7 @@
 #   Os pixels sao organizados por linhas e colunas e serao representados por valores inteiros positivos A x B.
 
 from dataclasses import dataclass
+from os import system
 
 @dataclass
 class Janela:
@@ -48,6 +49,48 @@ def verificar_clique(j:Janela, m:Mouse) ->str:
     return resp
 
 
+def entrada():
+    system('cls')
+    '''
+        Receber as informacoes da janela e do mouse e passar como paramentros para funcao *verificar_clique*
+        , e devolve monstrando se o clique ocorreu sobre a janela ou nao.
+        '''
+    print('Dimensões dos pixels de uma janela de um monitor!')
+    l1 : int = input('Linhas: ') 
+    c1 : int = input('Colunas: ')
+    print()
+    print('Dimensões de onde ocorreu o clique do mouse!')
+    l2 : int = input('Linhas: ')
+    c2 : int = input('Colunas: ')
+
+    verificacao = verificar_clique(Janela(l1, c1), Mouse(l2, c2))
+
+    return verificacao
+
+
+print(entrada())
+
+
+def janela_sobrepoe(j1:Janela, j2:Janela) -> str:
+    '''
+        Verificar se os espaços de duas janelas se sobrepõem
+
+    Exemplos:
+    >>> janela_sobrepoe(Janela(720, 810), Janela(720, 810))
+    'As janelas não se sobrepõem'
+    >>> janela_sobrepoe(Janela(1280, 880), Janela(410, 320))
+    'Uma das janelas se sobrepõem a outra'
+    >>> janela_sobrepoe(Janela(560, 610), Janela(1890, 990))
+    'Uma das janelas se sobrepõem a outra'
+
+    '''
+
+    if j1.LINHAS == j2.LINHAS and j1.COLUNAS == j2.COLUNAS:
+        resp = 'As janelas não se sobrepõem'
+    elif (j1.LINHAS < j2.LINHAS and j1.COLUNAS < j2.COLUNAS) or (j2.LINHAS < j1.LINHAS and j2.COLUNAS < j1.COLUNAS):
+            resp = 'Uma das janelas se sobrepõem a outra'
+        
+    return resp
 
 
 
