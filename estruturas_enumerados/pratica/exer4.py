@@ -68,9 +68,22 @@ def direcao_90_graus(d:Direcoes) -> Direcoes:
     return direcao_90
 
 
+def direcao_anti_horario_90_graus(d:Direcoes) -> Direcoes:
+    '''
+        Indicar a direção de 90 graus no sentido anti-horário de outra direção.
+    
+    Exemplos:
+    >>> direcao_anti_horario_90_graus(Direcoes.NORTE).name
+    'OESTE'
+    >>> direcao_anti_horario_90_graus(Direcoes.SUL).name
+    'LESTE'
+    >>> direcao_anti_horario_90_graus(Direcoes.LESTE).name
+    'NORTE'
+    >>> direcao_anti_horario_90_graus(Direcoes.OESTE).name
+    'SUL'
+    '''
 
-
-
+    return direcao_90_graus(direcao_90_graus(direcao_90_graus(d)))
 
 
 
