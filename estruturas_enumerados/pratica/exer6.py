@@ -85,6 +85,8 @@ def data_valida(d:Data):
     False
     >>> data_valida(Data(31,8,2003))
     True
+    >>> data_valida(Data(29,2,3822))
+    False
     '''
 
     validar = False
@@ -113,11 +115,4 @@ def data_valida(d:Data):
                 validar = True
     
     return validar
-
-
-print(data_valida(Data(31,4,2003)))
-
-
-
-
 
