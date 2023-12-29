@@ -13,10 +13,10 @@ def eliminar_negativos(sequencia:list) -> list :
     >>> eliminar_negativos([-0.7, -101, 5, 41, -16, -0.234, 0.1, 0.45])
     [5, 41, 0.1, 0.45]
     '''
-    positivo = []
+    valores_correto = sequencia[:]
     for n in sequencia:
-        if n >= 0:
-            positivo.append(n)
+        if n < 0:
+            valores_correto.remove(n)
 
-    return positivo
+    return valores_correto
 
