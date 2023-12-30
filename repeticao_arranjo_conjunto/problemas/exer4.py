@@ -38,7 +38,11 @@ def calcula_desempenho(time:str, jogos:list[Resultado] ):
     
     '''
 
+    d = Desempenho(time, 0, 0, 0)
+    for resultado in jogos:
+        d = atualiza_desempenho(d, resultado.GOLS_MARCADOS, resultado.GOLS_SOFRIDOS)
 
+    return d
 
 
 def atualiza_desempenho(d:Desempenho, GM:int, GF:int):
@@ -63,6 +67,17 @@ def atualiza_desempenho(d:Desempenho, GM:int, GF:int):
     Desempenho(TIME='Alto Paraná', PONTOS=2, VITÓRIAS=0, SALDO=0)
     '''
 
+    pontos = d.PONTOS
+    vitorias = d.VITÓRIAS
+    saldo = d.SALDO + GM - GF
+
+    if GM > GF:
+        pontos += 3
+        vitorias += 1
+    elif GM == GF:
+        pontos += 1
+
+    return Desempenho(d.TIME, pontos, vitorias, saldo)
 
 
 
