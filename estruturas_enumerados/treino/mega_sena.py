@@ -28,12 +28,13 @@
 #   Os numeros serao representados por valores inteiros positivos.
 
 from random import randint, sample
+from os import system
 
 def sorteio(sorteados) -> int:
     '''
         Determinar quais serao os 5 numeros sortedos na Quina.
     '''
-
+    system('çls')
     sorteados = sample(range(1,80),5)
 
     return sorted(sorteados)
