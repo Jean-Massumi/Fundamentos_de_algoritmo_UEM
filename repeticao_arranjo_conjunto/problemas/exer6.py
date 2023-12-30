@@ -36,6 +36,20 @@ def resultado_eleicao(total_votos:list) -> str:
     'Candidato 2 eleito!'
     '''
 
+    e = Eleicao(0, 0, 0)
+
+    e = contar_voto(e, total_votos)
+
+    if e.VOTO_BRANCO > len(total_votos) * 0.5:
+        resultado = 'Uma nova eleição deve ser convocada!'
+    elif e.VOTO1 == e.VOTO2:
+        resultado = 'Uma nova eleição deve ser convocada!'
+    elif e.VOTO1 > e.VOTO2:
+        resultado = 'Candidato 1 eleito!'
+    else:
+        resultado = 'Candidato 2 eleito!'
+
+    return resultado
 
 
 
@@ -54,6 +68,19 @@ def contar_voto(e:Eleicao, total_v:list) -> Eleicao:
     Eleicao(VOTO1=3, VOTO2=3, VOTO_BRANCO=1)
     '''
 
+    voto1 = e.VOTO1
+    voto2 = e.VOTO2
+    branco = e.VOTO_BRANCO
+
+    for voto in total_v:
+        if voto == 1:
+            voto1 += 1
+        elif voto == 2:
+            voto2 += 1
+        else:
+            branco += 1
+
+    return Eleicao(voto1, voto2, branco)
 
 
 
