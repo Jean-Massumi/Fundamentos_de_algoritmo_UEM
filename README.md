@@ -1,6 +1,4 @@
-# Exercicios do Prof.Malbarbo
-
-Exercícios de fixação!
+# Exercícios de fixação!
 
 - Conceitos básicos
 - Projeto de programas
@@ -9,4 +7,4 @@ Exercícios de fixação!
 - Memória e passagem de parâmetros
 - Recursividade 
 
-Site dos exercicios do Malbarbo : https://malbarbo.pro.br/ensino/2023/6879/
+Site : https://malbarbo.pro.br/ensino/2023/6879/
