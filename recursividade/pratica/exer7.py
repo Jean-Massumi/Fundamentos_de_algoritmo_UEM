@@ -20,10 +20,4 @@ def lista_positivos(lst: list[int], inicio: int) -> list:
             nova_lista.append(lst[inicio - 1])
         return nova_lista
 
-
-
 print(lista_positivos([21, -4, -2, 17, 23, -9], 6))
-
-
-
-
